@@ -20,7 +20,7 @@ db.connect(err => {
     console.error('Database connection failed:', err);
     return;
   }
-  console.log('✅ Connected to MySQL Database.');
+  console.log('Connected to MySQL Database.');
 });
 
 
@@ -139,5 +139,6 @@ app.get('/api/products/details', (req, res) => {
 
 // Start Server
 app.listen(PORT, () => {
-  console.log(`🚀 Server running at http://localhost:${PORT}`);
+  console.log(`Server running at http://localhost:${PORT}`);
 });
+
