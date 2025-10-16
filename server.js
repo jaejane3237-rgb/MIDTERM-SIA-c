@@ -1,18 +1,15 @@
-// server.js
 const express = require('express');
 const mysql = require('mysql2');
 const app = express();
 const PORT = 3000;
 
-// Middleware
 app.use(express.json());
 
-// MySQL Connection
 const db = mysql.createConnection({
   host: 'localhost',
-  user: 'root',       // change if needed
-  password: 'user123',       // your MySQL password
-  database: 'store_db_c' // your DB name
+  user: 'root',       
+  password: 'user123',     
+  database: 'store_db_c' 
 });
 
 db.connect(err => {
@@ -33,8 +30,6 @@ app.get('/api/products', (req, res) => {
   });
 });
 
-
-
 // [READ] Get a Single Product by ID
 
 app.get('/api/products/:id', (req, res) => {
@@ -46,8 +41,6 @@ app.get('/api/products/:id', (req, res) => {
     res.json(results[0]);
   });
 });
-
-
 
 // [CREATE] Add a New Product
 app.post('/api/products', (req, res) => {
@@ -64,7 +57,6 @@ app.post('/api/products', (req, res) => {
 });
 
 
-
 // [UPDATE] Update an Existing Product
 
 app.put('/api/products/:id', (req, res) => {
@@ -79,8 +71,6 @@ app.put('/api/products/:id', (req, res) => {
   });
 });
 
-
-
 // [DELETE] Remove a Product
 
 app.delete('/api/products/:id', (req, res) => {
@@ -92,8 +82,6 @@ app.delete('/api/products/:id', (req, res) => {
     res.json({ message: 'Product deleted successfully' });
   });
 });
-
-
 
 // [ADVANCED SEARCH] Find Products by Criteria
 
@@ -117,8 +105,6 @@ app.get('/api/products/search', (req, res) => {
   });
 });
 
-
-
 //[JOIN] Get Products with Full Details
 
 app.get('/api/products/details', (req, res) => {
@@ -136,9 +122,9 @@ app.get('/api/products/details', (req, res) => {
   });
 });
 
-
 // Start Server
 app.listen(PORT, () => {
   console.log(`Server running at http://localhost:${PORT}`);
 });
+
 
