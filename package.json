@@ -8,7 +8,7 @@
     "start": "node server.js"
   },
   "keywords": [],
-  "author": "",
+  "author": "Maturan, Princess Jean A",
   "license": "ISC",
   "dependencies": {
     "express": "^5.1.0",
