@@ -8,7 +8,7 @@
     "start": "node server.js"
   },
   "keywords": [],
-  "author": "",
+  "author": "Merto,Tylerval A.",
   "license": "ISC",
   "dependencies": {
     "express": "^5.1.0",
