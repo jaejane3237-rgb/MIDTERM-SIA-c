@@ -1,18 +1,18 @@
-// server.js
+
 const express = require('express');
 const mysql = require('mysql2');
 const app = express();
 const PORT = 3000;
 
-// Middleware
+
 app.use(express.json());
 
-// MySQL Connection
+
 const db = mysql.createConnection({
   host: 'localhost',
-  user: 'root',       // change if needed
-  password: 'user123',       // your MySQL password
-  database: 'store_db_c' // your DB name
+  user: 'root',      
+  password: 'user123',     
+  database: 'store_db_c' 
 });
 
 db.connect(err => {
@@ -141,4 +141,5 @@ app.get('/api/products/details', (req, res) => {
 app.listen(PORT, () => {
   console.log(`Server running at http://localhost:${PORT}`);
 });
+
 
