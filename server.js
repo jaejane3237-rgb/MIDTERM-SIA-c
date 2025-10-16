@@ -20,7 +20,7 @@ db.connect(err => {
     console.error('Database connection failed:', err);
     return;
   }
-  console.log('✅ Connected to MySQL Database.');
+  console.log(' Connected to MySQL Database.');
 });
 
 
@@ -35,7 +35,7 @@ app.get('/api/products', (req, res) => {
 
 
 
-// [READ] Get a Single Product by ID
+// Get a Single Product by ID
 
 app.get('/api/products/:id', (req, res) => {
   const { id } = req.params;
@@ -49,7 +49,7 @@ app.get('/api/products/:id', (req, res) => {
 
 
 
-// [CREATE] Add a New Product
+// Add a New Product
 app.post('/api/products', (req, res) => {
   const { product_name, price } = req.body;
   if (!product_name || !price) {
@@ -65,7 +65,7 @@ app.post('/api/products', (req, res) => {
 
 
 
-// [UPDATE] Update an Existing Product
+//Update an Existing Product
 
 app.put('/api/products/:id', (req, res) => {
   const { id } = req.params;
@@ -81,7 +81,7 @@ app.put('/api/products/:id', (req, res) => {
 
 
 
-// [DELETE] Remove a Product
+//  Remove a Product
 
 app.delete('/api/products/:id', (req, res) => {
   const { id } = req.params;
@@ -95,7 +95,7 @@ app.delete('/api/products/:id', (req, res) => {
 
 
 
-// [ADVANCED SEARCH] Find Products by Criteria
+// Find Products by Criteria
 
 app.get('/api/products/search', (req, res) => {
   const { name, minPrice } = req.query;
@@ -119,7 +119,7 @@ app.get('/api/products/search', (req, res) => {
 
 
 
-//[JOIN] Get Products with Full Details
+//Get Products with Full Details
 
 app.get('/api/products/details', (req, res) => {
   const sql = `
@@ -139,5 +139,6 @@ app.get('/api/products/details', (req, res) => {
 
 // Start Server
 app.listen(PORT, () => {
-  console.log(`🚀 Server running at http://localhost:${PORT}`);
+  console.log(` Server running at http://localhost:${PORT}`);
 });
+
